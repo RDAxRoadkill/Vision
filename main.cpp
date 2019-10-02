@@ -1,33 +1,60 @@
-/*
- ****************************************************************************
- * TITEL          main
- * OMSCHRIJVING   Defineert het beginpunt van de applicatie
- * BESTAND        main.cpp
- * VERSIE		  1
- * AUTEUR         G.A. Harkema, 20 MAART 2019
- *
- ****************************************************************************
- */
-
+#include "opencv2/imgproc/imgproc.hpp" 
+#include "opencv2/highgui/highgui.hpp"
 #include <iostream>
+#include <string>
 
-#include <opencv2/core/core.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
+using namespace cv;
+using namespace std;
 
-int main()
+int main(int argc, char* argv[])
 {
-	std::cout << "Hello World!\n";
+	// Open de camera met nummer 0 in lijst
+	VideoCapture cap(0);
+
+	// Controle of de camera wordt herkend.
+	if (!cap.isOpened())
+	{
+		cout << "Cannot open the video cam" << endl;
+		return -1;
+	}
+
+	// Breedte en hooogte van de frames die de camera genereert ophalen. 
+	double dWidth = cap.get(CAP_PROP_FRAME_WIDTH);
+	double dHeight = cap.get(CAP_PROP_FRAME_HEIGHT);
+	cout << "Frame size : " << dWidth << " x " << dHeight << endl;
+
+	// Window maken waarin de beelden "live" getoond worden
+	namedWindow("Live", WINDOW_AUTOSIZE);
+
+	
+	Mat frame;
+	while (1)
+	{
+		// Continue loop waarin een beeld wordt opgehaald en wordt getoond in het window
+
+		// Lees een nieuw frame
+		bool bSuccess = cap.read(frame);
+		//Flippen van frames als dit nodig is. (1 flip around y-axis), 0 (flip around x-axis), -1 (flip both axes)
+		flip(frame, frame, 1);
+
+		// Controlleer of het frame goed gelezen is.
+		if (!bSuccess)
+		{
+			cout << "Cannot read a frame from video stream" << endl;
+			break;
+		}
+
+		// Het tonen van grijswaarde beeld
+		imshow("Live", frame);
+
+		//  Wacht 30 ms op ESC-toets. Als ESC-toets is ingedrukt verlaat dan de loop
+		if (waitKey(1) == 27)
+		{
+			cout << "esc key is pressed by user" << endl;
+			break;
+		}
+
+		
+	}
+	return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
-

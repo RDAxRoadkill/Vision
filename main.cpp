@@ -19,9 +19,9 @@ int main(int argc, char* argv[])
 	}
 
 	// Breedte en hooogte van de frames die de camera genereert ophalen. 
-	double dWidth = cap.get(CAP_PROP_FRAME_WIDTH);
-	double dHeight = cap.get(CAP_PROP_FRAME_HEIGHT);
-	cout << "Frame size : " << dWidth << " x " << dHeight << endl;
+	//double dWidth = cap.get(CAP_PROP_FRAME_WIDTH);
+	//double dHeight = cap.get(CAP_PROP_FRAME_HEIGHT);
+	//cout << "Frame size : " << dWidth << " x " << dHeight << endl;
 
 	// Window maken waarin de beelden "live" getoond worden
 	namedWindow("Live", WINDOW_AUTOSIZE);
@@ -48,13 +48,18 @@ int main(int argc, char* argv[])
 		imshow("Live", frame);
 
 		//  Wacht 30 ms op ESC-toets. Als ESC-toets is ingedrukt verlaat dan de loop
-		if (waitKey(1) == 27)
-		{
-			cout << "esc key is pressed by user" << endl;
-			break;
-		}
+		//if (waitKey(1) == 27)
+		//{
+		//	cout << "esc key is pressed by user" << endl;
+		//	break;
+		//}
 
-		
+		//Wacht op een Backspace (nummer 32; http://www.asciitable.com/)
+		if (waitKey(1) == 32)
+		{
+			cout << "Spacebar pressed by user" << endl;
+			
+		}
 	}
 	return 0;
 }

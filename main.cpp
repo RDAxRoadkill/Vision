@@ -6,7 +6,7 @@
 using namespace cv;
 using namespace std;
 
-int main(int argc, char* argv[])
+int main1(int argc, char* argv[])
 {
 	// Open de camera met nummer 0 in lijst
 	VideoCapture cap(0);
@@ -58,7 +58,8 @@ int main(int argc, char* argv[])
 		if (waitKey(1) == 32)
 		{
 			cout << "Spacebar pressed by user" << endl;
-			
+			namedWindow("CurrentBottle", WINDOW_AUTOSIZE);// Create a window for display.
+			imshow("CurrentBottle", frame);
 		}
 	}
 	return 0;

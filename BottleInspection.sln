@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29326.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Demo 1 Laden en tonen van een afbeelding", "Demo 1 Laden en tonen van een afbeelding.vcxproj", "{A4E80EFB-1E60-41F5-8FD9-16B7DB6420F6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A4E80EFB-1E60-41F5-8FD9-16B7DB6420F6}.Debug|x64.ActiveCfg = Debug|x64
+		{A4E80EFB-1E60-41F5-8FD9-16B7DB6420F6}.Debug|x64.Build.0 = Debug|x64
+		{A4E80EFB-1E60-41F5-8FD9-16B7DB6420F6}.Release|x64.ActiveCfg = Release|x64
+		{A4E80EFB-1E60-41F5-8FD9-16B7DB6420F6}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {76D3F98B-1D1A-4259-BD0C-20109F0A805C}
+	EndGlobalSection
+EndGlobal

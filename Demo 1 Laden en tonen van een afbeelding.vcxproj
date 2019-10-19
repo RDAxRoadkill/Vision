@@ -11,11 +11,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{1d3e48ee-5399-4ad6-8be5-d301aa10d6a1}</ProjectGuid>
+    <ProjectGuid>{a4e80efb-1e60-41f5-8fd9-16b7db6420f6}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>VisionEindopgave</RootNamespace>
+    <RootNamespace>Demo_1_Laden_en_tonen_van_een_afbeelding</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>VisionEindopgave</ProjectName>
+    <ProjectName>BottleInspection</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -85,7 +85,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="main2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
